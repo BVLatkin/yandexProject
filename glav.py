@@ -12,7 +12,7 @@ size = WIDTH, HEIGHT = 1000, 800
 display = pygame.display.set_mode((1000, 600))
 FPS = 60
 bg = pygame.image.load("image/fon.png")
-bg = pygame.transform.scale(bg, (2000, 1000))
+bg = pygame.transform.scale(bg, (3000, 2000))
 pygame.display.set_caption("Shooter")
 clock = pygame.time.Clock()
 
@@ -60,7 +60,7 @@ heart_bonus_image = pygame.image.load("image/heart.png")
 
 
 bg_img = pygame.image.load('image/fon.png')
-bg_img = pygame.transform.scale(bg_img, (5000, 3000))
+bg_img = pygame.transform.scale(bg_img, (7000, 5000))
 
 screen_width = pygame.display.Info().current_w
 screen_height = pygame.display.Info().current_h
@@ -382,35 +382,35 @@ class PlayerBullet:
                 player_bullets.remove(self)
 
 
-enemy_1 = [SlimeEnemy(3000, 467),
-           SlimeEnemy(1400, 400),
-           SlimeEnemy(500, 300),
-           SlimeEnemy(400, 400),
-           SlimeEnemy(800, 800),
-           SlimeEnemy(1000, 400),
-           SlimeEnemy(1500, 300)]
+enemy_1 = [SlimeEnemy(2788, 2555),
+           SlimeEnemy(2900, 2666),
+           SlimeEnemy(2788, 2777),
+           SlimeEnemy(2444, 2888),
+           SlimeEnemy(2266, 2988),
+           SlimeEnemy(2111, 2333),
+           SlimeEnemy(2788, 2222)]
 
-enemy_2 = [SlimeEnemy1(1299, 467),
-           SlimeEnemy1(1400, 400),
-           SlimeEnemy1(1500, 180),
-           SlimeEnemy1(1200, 1000),
-           SlimeEnemy1(700, 400),
-           SlimeEnemy1(1500, 1000)]
+enemy_2 = [SlimeEnemy1(2765, 2000),
+           SlimeEnemy1(2453, 2000),
+           SlimeEnemy1(2867, 2000),
+           SlimeEnemy1(2465, 2000),
+           SlimeEnemy1(2543, 2000),
+           SlimeEnemy1(2342, 2000)]
 
-enemy_3 = [SlimeEnemy2(1000, 467),
-           SlimeEnemy2(1133, 400),
-           SlimeEnemy2(800, 180),
-           SlimeEnemy2(1500, 467),
-           SlimeEnemy2(1133, 1500),
-           SlimeEnemy2(300, 1200)]
+enemy_3 = [SlimeEnemy2(2234, 2666),
+           SlimeEnemy2(2788, 2555),
+           SlimeEnemy2(2767, 2444),
+           SlimeEnemy2(2788, 2333),
+           SlimeEnemy2(2723, 2233),
+           SlimeEnemy2(2788, 2222)]
 
-bonus1 = [Bonus(1000, 800),
-          Bonus(90, 85),
-          Bonus(1900, 300)]
+bonus1 = [Bonus(2000, 2000),
+          Bonus(3000, 2000),
+          Bonus(2788, 2500)]
 
 player = Player(400, 300, 32, 32)
 
-display_scroll = [0, 0]
+display_scroll = [2000, 2000]
 
 player_bullets = []
 
@@ -461,8 +461,6 @@ if __name__ == "__main__":
             quit()
 
         keys = pygame.key.get_pressed()
-
-        pygame.draw.rect(display, (255, 255, 255), (100 - display_scroll[0], 100 - display_scroll[1], 16, 16))
 
         if keys[pygame.K_a] and hero_x + hero_width < WIDTH:
             display_scroll[0] -= 5
@@ -531,3 +529,4 @@ if __name__ == "__main__":
 
         clock.tick(60)
         pygame.display.update()
+
